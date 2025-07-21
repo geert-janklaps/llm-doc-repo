@@ -1,0 +1,23 @@
+name: Generate SAPUI5 Documentation LLM
+on: workflow_dispatch
+
+jobs:
+  ui5-docs-llm:
+    name: SAPUI5 Documentation LLM
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          repository: "https://github.com/SAP-docs/sapui5.git"
+          path: "UI5"
+      - name: Update README
+        uses: abhinav/stitchmd-action@v1
+        with:
+          mode: write
+          summary: UI5/doc/index.md
+          output: ui5-llm-full.txt
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          file_pattern: ui5-llm-full.txt
+          commit_message: "Auto-update ui5-llm-full.txt"
