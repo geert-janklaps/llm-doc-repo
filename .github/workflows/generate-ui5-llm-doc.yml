@@ -9,7 +9,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          repository: "https://github.com/SAP-docs/sapui5.git"
+          repository: "SAP-docs/sapui5"
           path: "UI5"
       - name: Update README
         uses: abhinav/stitchmd-action@v1
