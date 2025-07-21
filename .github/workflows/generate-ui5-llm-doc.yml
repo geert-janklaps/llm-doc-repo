@@ -11,6 +11,9 @@ jobs:
         with:
           repository: "SAP-docs/sapui5"
           path: "UI5"
+      - name: Remove paragraph from index.md
+        run: |
+          sed -i '2,3d' UI5/docs/index.md
       - name: Update README
         uses: abhinav/stitchmd-action@v1
         with:
