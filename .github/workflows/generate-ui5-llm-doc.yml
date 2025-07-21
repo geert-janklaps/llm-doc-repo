@@ -15,7 +15,7 @@ jobs:
         uses: abhinav/stitchmd-action@v1
         with:
           mode: write
-          summary: UI5/doc/index.md
+          summary: UI5/docs/index.md
           output: ui5-llm-full.txt
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
